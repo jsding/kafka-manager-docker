@@ -5,7 +5,7 @@ ARG VERSION=2.0.0.2
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && mkdir -p /usr/share/man/man1/ \
-  && apt-get install --no-install-recommends -y openjdk-8-jdk-headless unzip\
+  && apt-get install --no-install-recommends -y openjdk-8-jdk-headless unzip wget\
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /app
