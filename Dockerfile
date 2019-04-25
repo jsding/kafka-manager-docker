@@ -10,12 +10,12 @@ RUN apt-get update && mkdir -p /usr/share/man/man1/ \
 
 RUN mkdir /app
 RUN mkdir -p /tmp /src 
-RUN wget -nv https://github.com/yahoo/kafka-manager/archive/$VERSION.tar.gz -O /tmp/kafka-manager.tar.gz 
+RUN wget -nv https://github.com/yahoo/kafka-manager/archive/2.0.0.2.tar.gz -O /tmp/kafka-manager.tar.gz 
 RUN tar -xf /tmp/kafka-manager.tar.gz -C /src
 RUN cd /src/kafka-manager-2.0.0.2 && ./sbt update && ./sbt clean dist
 
-COPY /src/kafka-manager-$VERSION/target/universal/kafka-manager-$VERSION.zip /tmp
-RUN unzip -d /tmp /tmp/kafka-manager-$VERSION.zip && mv /tmp/kafka-manager-$VERSION/* /app/ \
+COPY /src/kafka-manager-2.0.0.2/target/universal/kafka-manager-2.0.0.2.zip /tmp
+RUN unzip -d /tmp /tmp/kafka-manager-2.0.0.2.zip && mv /tmp/kafka-manager-2.0.0.2/* /app/ \
   && rm -rf /tmp/kafka-manager* && rm -rf /app/share/doc
 
 ADD entrypoint.sh /app/
