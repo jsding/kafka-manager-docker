@@ -14,7 +14,7 @@ RUN wget -nv https://github.com/yahoo/kafka-manager/archive/2.0.0.2.tar.gz -O /t
 RUN tar -xf /tmp/kafka-manager.tar.gz -C /src
 RUN cd /src/kafka-manager-2.0.0.2 && ./sbt update && ./sbt clean dist
 
-COPY /src/kafka-manager-2.0.0.2/target/universal/kafka-manager-2.0.0.2.zip /tmp
+RUN cp /src/kafka-manager-2.0.0.2/target/universal/kafka-manager-2.0.0.2.zip /tmp
 RUN unzip -d /tmp /tmp/kafka-manager-2.0.0.2.zip && mv /tmp/kafka-manager-2.0.0.2/* /app/ \
   && rm -rf /tmp/kafka-manager* && rm -rf /app/share/doc
 
