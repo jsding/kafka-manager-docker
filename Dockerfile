@@ -8,6 +8,8 @@ RUN apt-get update && mkdir -p /usr/share/man/man1/ \
   && apt-get install --no-install-recommends -y openjdk-8-jdk-headless unzip wget\
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+
+
 RUN mkdir /app
 RUN mkdir -p /tmp /src 
 RUN wget -nv https://github.com/yahoo/kafka-manager/archive/2.0.0.2.tar.gz -O /tmp/kafka-manager.tar.gz 
