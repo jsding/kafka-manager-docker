@@ -8,7 +8,7 @@ A Docker container based on Debian 9 containing just OpenJDK Java 8 and [Yahoo's
 
 Use `ZK_HOSTS` to specify connection to your ZooKeeper cluster, e.g. `zk-1.zk:2181,zk-2.zk:2181,zk-3.zk:2181/kafka-manager`.
 ```
-sudo docker run -d --name kafka-manager -p 9000:9000 -e ZK_HOSTS="kafka.playstrap.com:2181" dbface/kafka-manager
+sudo docker run -d --name kafka-manager -p 9000:9000 -e ZK_HOSTS="kafka.test.com:2181" dbface/kafka-manager
 ```
 
 Supported ENV variables:
